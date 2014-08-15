@@ -1,0 +1,56 @@
+/*
+ * SIPp Webfrontend	- Web tool to create, manage and run SIPp test cases
+ * Copyright (c) 2008 Mario Smeritschnig
+ * Idea, support, planning, guidance Michael Hirschbichler
+ *
+ * * * BEGIN LICENCE * * *
+ *
+ * This file is part of SIPp Webfrontend.
+ * 
+ * SIPp Webfrontend is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * SIPp Webfrontend is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with SIPp Webfrontend.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * * * END LICENCE * * *
+ *
+ */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background:#ffffff;
+}
+
+.tab {font-family:Verdana; font-size:11px; vertical-align:middle; text-align:center}
+
+th { font-family: Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; background:#C0CEFE; height:20px; vertical-align:middle; line-height:20px; cursor:auto;}
+
+.tableheader { font-family: Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; background:#C0CEFE; height:20px; vertical-align:middle; line-height:20px; cursor:auto;}
+
+.datatable { border-style:solid; border-width:1px; border-color:#FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; cursor:pointer; }
+
+.datatable_noclick { border-style:solid; border-width:1px; border-color:#FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; cursor:auto; }
+
+.formtable { border-style:solid; border-width:1px; border-color:#FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; }
+
+a { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12; text-decoration:none; color:#0066CC }
+a:hover { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12; text-decoration:underline; color:#CC3300 }
+
+.breadcumbs { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13; font-style:italic; text-decoration:none; color:#0066CC }
+.breadcumbs:hover { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13; font-style:italic; text-decoration:underline; color:#CC3300 }
+
+.input { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; border-width:1px; border-style:solid; border-color:#646464; }
+
+.text { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; text-decoration:none; color:#000000 }
+.smalltext { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; text-decoration:none; color:#000000 }
+.error { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; text-decoration:none; color:#FF0000 }

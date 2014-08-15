@@ -1,0 +1,95 @@
+/*
+ * SIPp Webfrontend	- Web tool to create, manage and run SIPp test cases
+ * Copyright (c) 2008 Mario Smeritschnig
+ * Idea, support, planning, guidance Michael Hirschbichler
+ *
+ * * * BEGIN LICENCE * * *
+ *
+ * This file is part of SIPp Webfrontend.
+ * 
+ * SIPp Webfrontend is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * SIPp Webfrontend is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with SIPp Webfrontend.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * * * END LICENCE * * *
+ *
+ */
+
+INSTALLATION INSTRUCTIONS:
+
+Requirements:
+- LAMP Environement (Linux, Apache, Mysql, PHP)
+- at least 0.5MB free disk space ;)
+- a valid MYSQL user with privileges to create a database and tables
+- write access in or beneath apache's www subfolder, or at least one of its
+  subfolders (directly or via FTP, SSH ...)
+- at least one version of SIPp installed
+
+Installation:
+	1. Download SIPp Webfrontend from sipp.sourceforge.net
+	2. Unzip the downloaded file and...
+	3. upload the contents of the src folder onto your webserver using
+	   ftp, ssh etc.
+	4. Copy the files in a subfolder of apaches  www directory, say 
+	   /var/www/sipp-webfrontend/ .
+	5. Now create a mysql database named SIPpDB (if you choose another
+	   database name, change the attribute db_name in the config.ini.php
+	   file accordingly). To achieve this you have either direct access
+	   to Mysql via shell, or you use a tool like phpMyAdmin.
+	   Note that if you use phpMyAdmin, you need the necessary per-
+	   missions to create databases and tables. 
+	   Via shell, type 
+		mysql -u <username> -p
+	   where <username> is your valid Mysql user. 
+	   Now write
+		CREATE DATABASE SIPpDB;
+		USE SIPpDB;
+		\. /var/www/sipp-webfrontend/tables.sql
+		quit
+	   to create the database and the tables and exit (instead of 
+	   /var/www/sipp-webfrontend/ enter the path to your SIPp webfolder).
+	6. For the tool to work, you need at least one version of SIPp
+	   installed on the server. If this is not the case, do it now. You
+	   can download SIPp at sipp.sourceforge.net. SIPp Webfrontend 
+	   assumes that each version of the sipp command line tool has the
+	   name sipp. Thus if you want to use different versions of SIPp, it
+	   is important that they are located in different folders under the
+	   name sipp. Let us assume that you have now installed 2 versions
+	   under /usr/bin/sipp2.0/sipp and /usr/bin/sipp3.0/sipp.
+	7. Now edit the config file config.ini.php. You can find information
+	   about its structure and parameters in the config file itself.
+	   In the [EXECUTABLES] section enter a line for each installed
+	   version of SIPp. In our case it should look like that:
+		[EXECUTABLES]
+		; Specify the absolute paths to the SIPp executables using
+		; the syntax: version_number = path
+		; The first occurrence of such a line, defines the default
+		; version. At least one version is mandatory.
+		2.0 = "/usr/bin/sipp2.0/sipp"
+		3.0 = "/usr/bin/sipp3.0/sipp"
+	   Further in the [CONFIG] section adjust the attributes
+		db_host = "localhost"        ;in most cases the webserver
+					     ;and the database server are
+					     ;on the same machine, in this
+					     ;case leave "localhost"
+		db_user = "someuser"         ;valid Mysql user
+		db_pwd = "somepwd"           ;valid password of the Mysql
+					     ;user
+		db_name = "SIPpDB"           ;only change this if you chose
+					     ;a different database name in
+					     ;step 5
+		admin_pwd = "secret"         ;specify a password for the
+					     ;admin area of the web front-
+					     ;end, leave it blank if you
+					     ;don't want password authenti-
+					     ;cation
+

@@ -1,0 +1,4 @@
+<? 
+
+header("location: tests.php"); 
+?>
